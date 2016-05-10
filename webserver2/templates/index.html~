@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block body %}
+ <body>
+  {% if error %}<p class=error>There are {{ error }} people in the library.{% endif %}
+</body>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<body>
+	<canvas id="demoCanvas" width="500" height="500">
+	</canvas>
+
+	<script type="text/javascript">
+	    var canvasDom = document.getElementById("demoCanvas");
+        var context = canvasDom.getContext('2d');
+        var seat1 = "{{seats.a}}"
+        var seat2 = "{{seats.b}}"
+        var seat3 = "{{seats.c}}"
+        var seat4 = "{{seats.d}}"
+
+        var num = "There are {{ num }} people in the library."
+        context.fillStyle = "white";
+        context.fillRect(0,0,500,50);
+        context.fillStyle = "black";
+    	context.font = "20px Georgia";
+    	context.fillText(num,0,30);
+
+    	context.fillStyle = "gold";
+    	context.fillRect(150, 150, 250, 250);
+    	context.fillStyle = "black";
+    	context.fillText('1',270,70);
+    	context.fillText('2',270,420);
+    	context.fillText('3',95,245);
+    	context.fillText('4',445,245);
+    	context.fillText('IoT Libray',230,275);
+
+        if (seat1==='1') {
+        	context.fillStyle = "red";
+    		context.fillRect(250,75,50,50);
+        }
+        else {
+        	context.fillStyle = "green";
+    		context.fillRect(250,75,50,50);
+        }
+
+        if (seat2==='1') {
+        	context.fillStyle = "red";
+    		context.fillRect(250,425,50,50);
+        }
+        else {
+        	context.fillStyle = "green";
+    		context.fillRect(250,425,50,50);
+        }
+
+        if (seat3==='1') {
+        	context.fillStyle = "red";
+    		context.fillRect(75,250,50,50);
+        }
+        else {
+        	context.fillStyle = "green";
+    		context.fillRect(75,250,50,50);
+        }
+
+        if (seat4==='1') {
+        	context.fillStyle = "red";
+    		context.fillRect(425,250,50,50);
+        }
+        else {
+        	context.fillStyle = "green";
+    		context.fillRect(425,250,50,50);
+        }
+	</script>
+	<a href="javascript:location.reload(true)">Refresh</a>
+</body>
+{% endblock %}
